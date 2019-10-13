@@ -27,6 +27,7 @@ EOF
 echo -e 'PRODUCT_PACKAGES += \\' > apps.mk
 
 mkdir -p bin
+
 #downloadFromFdroid packageName overrides
 downloadFromFdroid() {
 	mkdir -p tmp
@@ -54,55 +55,14 @@ downloadFromMicroG() {
 	addCopy $apk $1 "$2"
 }
 
-downloadFromMicroG com.google.android.gms
-downloadFromMicroG com.google.android.gsf
-downloadFromMicroG com.android.vending
-downloadFromMicroG org.microg.gms.droidguard
-#downloadFromMicroG org.microg.unifiednlp
-
 #phh's Superuser
 downloadFromFdroid me.phh.superuser
-#YouTube viewer
-downloadFromFdroid org.schabi.newpipe
-#Ciphered SMS
-#downloadFromFdroid org.smssecure.smssecure "messaging"
-#Navigation
-downloadFromFdroid net.osmand.plus
-#Web browser
-#downloadFromFdroid org.mozilla.fennec_fdroid "Browser2 QuickSearchBox"
-#downloadFromFdroid acr.browser.lightning "Browser2 QuickSearchBox"
-#Calendar
-downloadFromFdroid ws.xsoh.etar
-downloadFromFdroid org.dmfs.tasks
-#Public transportation
-#downloadFromFdroid de.grobox.liberario
-downloadFromFdroid de.schildbach.oeffi
-#Pdf viewer
-downloadFromFdroid com.artifex.mupdf.viewer.app
-#Keyboard/IME
-#downloadFromFdroid com.menny.android.anysoftkeyboard "LatinIME OpenWnn"
-#Play Store download
-#downloadFromFdroid com.github.yeriomin.yalpstore
-#Mail client
-#downloadFromFdroid com.fsck.k9 "Email"
-downloadFromFdroid com.fsck.k9
-#Ciphered Instant Messaging
-#downloadFromFdroid im.vector.alpha
-#Calendar/Contacts sync
-downloadFromFdroid at.bitfire.davdroid
-#Nextcloud client
-downloadFromFdroid com.nextcloud.client
 
 downloadFromFdroid com.bytehamster.changelog
-downloadFromFdroid vom.simplemobiletools.notes.pro
-downloadFromFdroid net.programmierecke.radiodroid2
 downloadFromFdroid com.bleyl.recurrence
 
-#TODO: Some social network?
-#Facebook? Twitter? Reddit? Mastodon?
 downloadFromFdroid org.fdroid.fdroid
 downloadFromFdroid org.gdroid.gdroid
-
 
 echo >> apps.mk
 
